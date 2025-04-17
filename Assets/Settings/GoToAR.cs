@@ -17,7 +17,7 @@ public class GoToAR : MonoBehaviour
     //  ArCamera.SetActive(true);
       menuPanel.SetActive(false);
       imageTarget.SetActive(true);
-           ArCamera.GetComponent<Camera>().enabled = true;
+     ArCamera.GetComponent<Camera>().enabled = true;
 
     }
 

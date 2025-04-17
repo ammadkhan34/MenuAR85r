@@ -15,7 +15,6 @@ public class TouchScript : MonoBehaviour
     public GameObject UI;
     // Every time we update object we need to remoce previous one in order for next one to be shown 
     private GameObject lastObject;
-    public static int count = 0;
 
 
 
@@ -51,8 +50,7 @@ public class TouchScript : MonoBehaviour
                                       //Assign details 
                                       models = myObject?.models;
                                       Constrains = myObject?.listOfIndexes;
-                                      count = count + 1;
-                                if (count > 300) {
+                               
 
                                     var i = 0;
                                     //Loop until we find section pressed 
@@ -65,7 +63,7 @@ public class TouchScript : MonoBehaviour
                                             models[i].SetActive(true);
                                             lastObject = models[i];
 
-                }
+                
 
                 }
                 //Clear all details of ray cast
