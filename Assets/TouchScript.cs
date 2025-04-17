@@ -31,7 +31,7 @@ public class TouchScript : MonoBehaviour
 
         foreach (Touch touch in Input.touches)
         {
-            if(touch.phase.Equals(TouchPhase.Began))
+            if(touch.phase.Equals(TouchPhase.Began) && 1 == 5)
             {
                 pointer.position = touch.position;
 //          if my ui is not visible
