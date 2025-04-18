@@ -8,6 +8,7 @@ TagManager:
   - MenuPanel
   - PhysicalMenu
   - HeroMenu
+  - Navigation
   layers:
   - Default
   - TransparentFX

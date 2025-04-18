@@ -1,4 +1,6 @@
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class RestaurantsList : MonoBehaviour
 {
@@ -7,8 +9,11 @@ public class RestaurantsList : MonoBehaviour
     void Start()
     {
 buttonTemplate = transform.GetChild(0).gameObject;
-for (int i = 0 ; i < 50; i++) {
+for (int i = 0 ; i < 10; i++) {
     GameObject g = Instantiate(buttonTemplate,transform);
+    g.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "" + i;
+    int index = i;
+    g.GetComponent <Button>().onClick.AddListener(delegate{buttonPressed(index);});
 }
         
     }
@@ -17,5 +22,11 @@ for (int i = 0 ; i < 50; i++) {
     void Update()
     {
         
+    }
+
+    void buttonPressed(int i ){
+        GameObject naviagtion = GameObject.FindGameObjectWithTag("Navigation");
+        naviagtion.GetComponent<Navigation1>().showMenu(i);
+        print(i);
     }
 }

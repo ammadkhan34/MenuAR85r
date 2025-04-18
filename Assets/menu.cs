@@ -7,14 +7,19 @@ public class menu : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GameObject buttonTemplate = transform.GetChild(0).gameObject;
+      
 
-        for (int i = 0 ;i < 50; i++){
+        
+    }
+
+
+    public void showItems(int size ) {
+  GameObject buttonTemplate = transform.GetChild(0).gameObject;
+
+        for (int i = 0 ;i < size; i++){
             refrenceForButtons = Instantiate(buttonTemplate,transform);
             refrenceForButtons.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "" + i;
         }
-
-        
     }
 
     // Update is called once per frame
