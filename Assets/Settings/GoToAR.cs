@@ -18,7 +18,6 @@ public class GoToAR : MonoBehaviour
       menuPanel.SetActive(false);
       imageTarget.SetActive(true);
      ArCamera.GetComponent<Camera>().enabled = true;
-
     }
 
     // Update is called once per frame
