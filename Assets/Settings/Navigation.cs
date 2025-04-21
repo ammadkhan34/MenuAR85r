@@ -3,6 +3,7 @@ using UnityEngine;
 public class Navigation1 : MonoBehaviour
 {
     GameObject ArCamera;
+    public GameObject initialScreen;
     GameObject menuPanel;
     public GameObject imageTarget;
     public GameObject MenuScreen;
@@ -23,6 +24,7 @@ public class Navigation1 : MonoBehaviour
 
     public void showARCamera() 
     {
+        initialScreen.SetActive(false);
     //  ArCamera.SetActive(true);
       menuPanel.SetActive(false);
       imageTarget.SetActive(true);
@@ -40,5 +42,11 @@ public class Navigation1 : MonoBehaviour
         RestaurantScreen.SetActive(false);
         MenuScreen.SetActive(true);
        MenuPanel.GetComponent<menu>().showItems(i);
+    }
+
+
+    public void showRestaurants() {
+        initialScreen.SetActive(false);
+        RestaurantScreen.SetActive(true);
     }
 }

@@ -31,7 +31,7 @@ public class TouchScript : MonoBehaviour
 
         foreach (Touch touch in Input.touches)
         {
-            if(touch.phase.Equals(TouchPhase.Began) && 1 == 5)
+            if(touch.phase.Equals(TouchPhase.Began))
             {
                 pointer.position = touch.position;
 //          if my ui is not visible
@@ -45,12 +45,14 @@ public class TouchScript : MonoBehaviour
                 
                 foreach(RaycastResult result in raycastResult)
                 { 
+                    print(result.gameObject.tag);
                                      // get object of menu type being touched 
                                       var myObject = GameObject.FindWithTag(result.gameObject.tag)?.GetComponent<returnMenu>();
                                       //Assign details 
                                       models = myObject?.models;
                                       Constrains = myObject?.listOfIndexes;
                                
+if (result.gameObject.tag == "HeroMenu") {
 
                                     var i = 0;
                                     //Loop until we find section pressed 
@@ -63,6 +65,7 @@ public class TouchScript : MonoBehaviour
                                             models[i].SetActive(true);
                                             lastObject = models[i];
 
+                }
                 
 
                 }
