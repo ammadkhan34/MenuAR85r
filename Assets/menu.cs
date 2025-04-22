@@ -22,8 +22,7 @@ public class menu : MonoBehaviour
     public void showItems(int size1 ) {
   GameObject buttonTemplate = transform.GetChild(0).gameObject;
   int length1 = dishNames[size1].Length;
-  print("length is");
-  print(length1);
+ 
         for (int i = 0 ;i < length1; i++) { 
             refrenceForButtons = Instantiate(buttonTemplate,transform);
             refrenceForButtons.transform.GetChild(1).GetComponent<RawImage>().texture = Resources.Load<Texture2D>("" + dishNames[size1][i]);
