@@ -31,6 +31,7 @@ public class menu : MonoBehaviour
             string dishName2 = dishNames[size1][i];
             refrenceForButtons.GetComponent <Button>().onClick.AddListener(delegate{buttonPressed(dishName2);});
         }
+        Destroy(buttonTemplate);
     }
 
 
