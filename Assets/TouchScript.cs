@@ -15,16 +15,22 @@ public class TouchScript : MonoBehaviour
     public GameObject UI;
     // Every time we update object we need to remoce previous one in order for next one to be shown 
     private GameObject lastObject;
-    
-
-
+    public bool showSinglePageMenu = false;
 
      void Start() { 
         // Initializing an empty Object
         lastObject = new GameObject();
     }
+
     void Update()
     {
+        if (showSinglePageMenu) {
+            singlePageMenu();
+        }
+    }
+
+
+    void singlePageMenu() {
         //This gives details about touch like where touch has  happend
         PointerEventData pointer = new PointerEventData(EventSystem.current);
         //This gives details of all touches like what has been touched 
@@ -54,7 +60,6 @@ public class TouchScript : MonoBehaviour
                                       Constrains = myObject?.listOfIndexes;
                                
 if (result.gameObject.tag == "HeroMenu") {
-
                                     var i = 0;
                                     //Loop until we find section pressed 
                                       while (touch.position.y < Constrains[i] && i < 5) {
@@ -65,10 +70,7 @@ if (result.gameObject.tag == "HeroMenu") {
                                             lastObject.SetActive(false);
                                             models[i].SetActive(true);
                                             lastObject = models[i];
-
                 }
-                
-
                 }
                 //Clear all details of ray cast
                 raycastResult.Clear();

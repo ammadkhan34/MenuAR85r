@@ -30,14 +30,22 @@ public class Navigation1 : MonoBehaviour
         menuPanel = GameObject.FindGameObjectWithTag("MenuPanel");
         mapStringToIndex.Add("cheese toastie", 0);
         mapStringToIndex.Add("Onion Pie", 1);
+         mapStringToIndex.Add("lemon tart", 2);
+        mapStringToIndex.Add("sticky toffee", 3);  
+        mapStringToIndex.Add("scotch egg", 4);
+        mapStringToIndex.Add("liver pate", 5);
+          mapStringToIndex.Add("fish", 6);
+        mapStringToIndex.Add("trout", 7);
     }
 
     public void showARCamera() 
     {
      initialScreen.SetActive(false);
       menuPanel.SetActive(false);
+      ArCamera.GetComponent<TouchScript>().showSinglePageMenu = true;
+      ArCamera.GetComponent<Camera>().enabled = true;
       imageTarget.SetActive(true);
-     ArCamera.GetComponent<Camera>().enabled = true;
+      UI.SetActive(true);
     }
 
      public void showObjectInAR(string dishName) 
