@@ -6,7 +6,7 @@ public class menu : MonoBehaviour
 {
     string[][] dishNames = new string [][] { new string[] {"cheese toastie","Onion Pie"},
     new string[] {"lemon tart","sticky toffee"},
-    new string[] {"scoth egg","liver pate"},
+    new string[] {"scotch egg","liver pate"},
     new string[] {"fish","trout"} }; 
     GameObject refrenceForButtons;
 
@@ -28,8 +28,26 @@ public class menu : MonoBehaviour
             refrenceForButtons = Instantiate(buttonTemplate,transform);
             refrenceForButtons.transform.GetChild(1).GetComponent<RawImage>().texture = Resources.Load<Texture2D>("" + dishNames[size1][i]);
             refrenceForButtons.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "" + dishNames[size1][i];
-            
+            string dishName2 = dishNames[size1][i];
+            refrenceForButtons.GetComponent <Button>().onClick.AddListener(delegate{buttonPressed(dishName2);});
         }
+    }
+
+
+//         g.GetComponent <Button>().onClick.AddListener(delegate{buttonPressed(index);});
+// }
+        
+//     }
+
+//     // Update is called once per frame
+//     void Update()
+//     {
+        
+//     }
+
+    void buttonPressed(string dishName ) {
+        GameObject naviagtion = GameObject.FindGameObjectWithTag("Navigation");
+        naviagtion.GetComponent<Navigation1>().showObjectInAR(dishName);
     }
 
     // Update is called once per frame

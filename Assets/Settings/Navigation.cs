@@ -12,6 +12,8 @@ public class Navigation1 : MonoBehaviour
 
     public GameObject MenuPanel;
 
+    public GameObject UI;
+
 
 
 
@@ -24,11 +26,23 @@ public class Navigation1 : MonoBehaviour
 
     public void showARCamera() 
     {
-        initialScreen.SetActive(false);
+     initialScreen.SetActive(false);
     //  ArCamera.SetActive(true);
       menuPanel.SetActive(false);
       imageTarget.SetActive(true);
      ArCamera.GetComponent<Camera>().enabled = true;
+    }
+
+     public void showObjectInAR(string dishName) 
+    {
+     initialScreen.SetActive(false);
+    //  ArCamera.SetActive(true);
+    menuPanel.SetActive(false);
+   // UI.SetActive(false);
+    imageTarget.SetActive(true);
+    GameObject dish = GameObject.FindGameObjectWithTag("Che");
+    dish.SetActive(true);
+    ArCamera.GetComponent<Camera>().enabled = true;
     }
 
     // Update is called once per frame
