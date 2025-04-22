@@ -15,6 +15,7 @@ public class TouchScript : MonoBehaviour
     public GameObject UI;
     // Every time we update object we need to remoce previous one in order for next one to be shown 
     private GameObject lastObject;
+    
 
 
 

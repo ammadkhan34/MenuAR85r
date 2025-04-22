@@ -1,4 +1,7 @@
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections.Generic;
+
 
 public class Navigation1 : MonoBehaviour
 {
@@ -14,20 +17,24 @@ public class Navigation1 : MonoBehaviour
 
     public GameObject UI;
 
+    Dictionary <string, int> mapStringToIndex;
+    public GameObject[] dishes3DObjects;
 
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        mapStringToIndex = new Dictionary<string, int>();
         ArCamera = GameObject.FindGameObjectWithTag("ARCamera");
         menuPanel = GameObject.FindGameObjectWithTag("MenuPanel");
+        mapStringToIndex.Add("cheese toastie", 0);
+        mapStringToIndex.Add("Onion Pie", 1);
     }
 
     public void showARCamera() 
     {
      initialScreen.SetActive(false);
-    //  ArCamera.SetActive(true);
       menuPanel.SetActive(false);
       imageTarget.SetActive(true);
      ArCamera.GetComponent<Camera>().enabled = true;
@@ -36,12 +43,10 @@ public class Navigation1 : MonoBehaviour
      public void showObjectInAR(string dishName) 
     {
      initialScreen.SetActive(false);
-    //  ArCamera.SetActive(true);
     menuPanel.SetActive(false);
-   // UI.SetActive(false);
+    UI.SetActive(false);
     imageTarget.SetActive(true);
-    GameObject dish = GameObject.FindGameObjectWithTag("Che");
-    dish.SetActive(true);
+    dishes3DObjects[mapStringToIndex[dishName]].SetActive(true);
     ArCamera.GetComponent<Camera>().enabled = true;
     }
 
