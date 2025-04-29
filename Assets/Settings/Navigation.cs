@@ -71,6 +71,12 @@ public class Navigation1 : MonoBehaviour
        MenuPanel.GetComponent<menu>().showItems(i);
     }
 
+     public void showRestaurant() {
+         MenuPanel.GetComponent<menu>().deleteItems();
+        MenuScreen.SetActive(false);
+        RestaurantScreen.SetActive(true);
+    }
+
 
     public void showRestaurants() {
         initialScreen.SetActive(false);

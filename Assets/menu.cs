@@ -8,6 +8,8 @@ public class menu : MonoBehaviour
     new string[] {"lemon tart","sticky toffee"},
     new string[] {"scotch egg","liver pate"},
     new string[] {"fish","trout"} }; 
+
+    public int currentSize = 0;
     GameObject refrenceForButtons;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,6 +24,7 @@ public class menu : MonoBehaviour
     public void showItems(int size1 ) {
   GameObject buttonTemplate = transform.GetChild(0).gameObject;
   int length1 = dishNames[size1].Length;
+  currentSize = length1-1;
  
         for (int i = 0 ;i < length1; i++) { 
             refrenceForButtons = Instantiate(buttonTemplate,transform);
@@ -31,6 +34,14 @@ public class menu : MonoBehaviour
             refrenceForButtons.GetComponent <Button>().onClick.AddListener(delegate{buttonPressed(dishName2);});
         }
         Destroy(buttonTemplate);
+    }
+
+       public void deleteItems() {
+
+        for (int i = 0;i < currentSize;i++) {
+GameObject buttonTemplate = transform.GetChild(i).gameObject;
+Destroy(buttonTemplate);
+        }
     }
 
 
