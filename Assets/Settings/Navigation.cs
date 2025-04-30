@@ -17,6 +17,8 @@ public class Navigation1 : MonoBehaviour
 
     public GameObject UI;
 
+    public GameObject ArBackButton;
+
     Dictionary <string, int> mapStringToIndex;
     public GameObject[] dishes3DObjects;
 
@@ -52,10 +54,11 @@ public class Navigation1 : MonoBehaviour
     {
      initialScreen.SetActive(false);
     menuPanel.SetActive(false);
-    UI.SetActive(false);
+    //UI.SetActive(false);
     imageTarget.SetActive(true);
     dishes3DObjects[mapStringToIndex[dishName]].SetActive(true);
     ArCamera.GetComponent<Camera>().enabled = true;
+    ArBackButton.SetActive(true);
     }
 
     // Update is called once per frame
@@ -64,6 +67,16 @@ public class Navigation1 : MonoBehaviour
         
     }
 
+
+  public void goBackToMenu() 
+    {
+      menuPanel.SetActive(true);
+      ArCamera.GetComponent<TouchScript>().showSinglePageMenu = false;
+      ArCamera.GetComponent<Camera>().enabled = true;
+      imageTarget.SetActive(false);
+      UI.SetActive(false);
+      ArBackButton.SetActive(false);
+    }
 
     public void showMenu(int i) {
         RestaurantScreen.SetActive(false);
