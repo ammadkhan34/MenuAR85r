@@ -64,6 +64,15 @@ public class Navigation1 : MonoBehaviour
         
     }
 
+ public void goBackToMenu() 
+    {
+      menuPanel.SetActive(true);
+      ArCamera.GetComponent<TouchScript>().showSinglePageMenu = false;
+      ArCamera.GetComponent<Camera>().enabled = false;
+      imageTarget.SetActive(false);
+      //UI.SetActive(false);
+     // ArBackButton.SetActive(false);
+    }
 
     public void showMenu(int i) {
         RestaurantScreen.SetActive(false);
