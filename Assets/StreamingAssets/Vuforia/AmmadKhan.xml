@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
+    <ImageTarget name="creative-qr-code-designs-13" size="1.000000 1.000000" />
     <ImageTarget name="stickyToffee" size="1.000000 1.413619" />
     <ImageTarget name="LiverPate" size="1.000000 1.413619" />
     <ImageTarget name="cheesetoastie" size="1.000000 1.413619" />

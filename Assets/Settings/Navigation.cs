@@ -24,6 +24,13 @@ public class Navigation1 : MonoBehaviour
 public GameObject cheeseToastieImageTarget;
 public GameObject stickyToffeeImageTarget;
 
+public GameObject lemonTartImageTarget;
+
+public GameObject fishPieImageTarget;
+public GameObject cheeseOnionImageTarget;
+public GameObject scotchEggsImageTarget;
+public GameObject liverPateImageTarget;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -59,6 +66,11 @@ public GameObject stickyToffeeImageTarget;
       codsCheeckImageTarget.SetActive(true);
       cheeseToastieImageTarget.SetActive(true);
       stickyToffeeImageTarget.SetActive(true);
+      lemonTartImageTarget.SetActive(true);
+      fishPieImageTarget.SetActive(true);
+      cheeseOnionImageTarget.SetActive(true);
+      scotchEggsImageTarget.SetActive(true);
+      liverPateImageTarget.SetActive(true);
       //imageTarget.SetActive(true);
       //UI.SetActive(true);
     }
