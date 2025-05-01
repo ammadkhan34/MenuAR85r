@@ -20,7 +20,9 @@ public class Navigation1 : MonoBehaviour
     Dictionary <string, int> mapStringToIndex;
     public GameObject[] dishes3DObjects;
 
-
+    public GameObject codsCheeckImageTarget;
+public GameObject cheeseToastieImageTarget;
+public GameObject stickyToffeeImageTarget;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,6 +48,19 @@ public class Navigation1 : MonoBehaviour
       ArCamera.GetComponent<Camera>().enabled = true;
       imageTarget.SetActive(true);
       UI.SetActive(true);
+    }
+
+
+    public void showCompleteMenuCamera() 
+    {
+     initialScreen.SetActive(false);
+      ArCamera.GetComponent<TouchScript>().showSinglePageMenu = false;
+      ArCamera.GetComponent<Camera>().enabled = true;
+      codsCheeckImageTarget.SetActive(true);
+      cheeseToastieImageTarget.SetActive(true);
+      stickyToffeeImageTarget.SetActive(true);
+      //imageTarget.SetActive(true);
+      //UI.SetActive(true);
     }
 
      public void showObjectInAR(string dishName) 

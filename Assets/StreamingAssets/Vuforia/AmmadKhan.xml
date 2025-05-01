@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
-    <ImageTarget name="scotcheggs" size="1.000000 1.333333" />
-    <ImageTarget name="CheeseToastie4" size="1.000000 1.311475" />
+    <ImageTarget name="stickyToffee" size="1.000000 1.413619" />
+    <ImageTarget name="LiverPate" size="1.000000 1.413619" />
+    <ImageTarget name="cheesetoastie" size="1.000000 1.413619" />
+    <ImageTarget name="FishPie" size="1.000000 1.413619" />
+    <ImageTarget name="lemonTart" size="1.000000 1.413619" />
+    <ImageTarget name="CheeseOnionPie" size="1.000000 1.413619" />
+    <ImageTarget name="codsCheeks" size="1.000000 1.413619" />
+    <ImageTarget name="scotcheggs" size="1.000000 1.413619" />
+    <ImageTarget name="trout" size="1.000000 1.413619" />
   </Tracking>
 </QCARConfig>
